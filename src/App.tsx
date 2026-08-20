@@ -50,7 +50,7 @@ export const INSTALL_STEPS = [
   {
     step: "04",
     title: "안전 경고 우회 (1차)",
-    desc: "Play 프로텍트 차단 경고가 활성화되면 하단의 [세부정보 더보기] 텍스트를 클릭합니다.",
+    desc: "Play 프로텍트 차단 경고가 활성화되면 하단의 [세부정보 더보기]를 클릭합니다.",
     imgUrl: "/images/step4.jpg"
   },
   {
@@ -61,9 +61,23 @@ export const INSTALL_STEPS = [
   },
   {
     step: "06",
-    title: "설치 완료 및 가동",
-    desc: "설치가 완료되면 [열기] 버튼을 눌러 앱을 정상 실행하고 요원 로그인(1111)을 진행하여 산림 관제를 시작합니다.",
+    title: "설치 완료",
+    desc: "설치가 완료되면 [열기]를 눌러 앱을 실행합니다.",
+
     imgUrl: "/images/step6.jpg"
+  },
+  {
+    step: "07",
+    title: "권한 허용",
+    desc: "카메라, 위치, 마이크 권한을 모두 허용해주세요.",
+    imgUrl: "/images/step7.jpg"
+  },
+  {
+    step: "08",
+    title: "체험 시작",
+    desc: "자유롭게 어플을 사용해 보세요!",
+    highlight: "현장 관리자의 초기 비밀번호는 1111입니다.",
+    imgUrl: "/images/step8.jpg"
   }
 ];
 
@@ -127,7 +141,15 @@ export default function App() {
                   <div className="space-y-1">
                     <div className="text-3xl font-black text-emerald-300">{stepItem.step}</div>
                     <h4 className="text-sm font-black text-darkgreen">{stepItem.title}</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">{stepItem.desc}</p>
+
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      {stepItem.desc}{" "}
+                      {stepItem.highlight && (
+                        <strong className="font-bold text-slate-800 block mt-1">
+                          {stepItem.highlight}
+                        </strong>
+                      )}
+                    </p>
                   </div>
                 </div>
               </div>
