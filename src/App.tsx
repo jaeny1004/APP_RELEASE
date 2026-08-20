@@ -37,26 +37,26 @@ export const INSTALL_STEPS = [
   },
   {
     step: "02",
-    title: "기기 보호 차단 (세부정보)",
-    desc: "Play 프로텍트 차단 경고가 활성화되면 당황하지 마시고 하단의 [세부정보 더보기] 텍스트를 클릭합니다.",
+    title: "기기 보호 차단",
+    desc: "좌측 하단의 [무시하고 설치]를 클릭합니다.",
     imgUrl: "/images/step2.jpg"
   },
   {
     step: "03",
     title: "보안 차단 무시 설치",
-    desc: "세부정보 창이 확장되어 상세 문구가 노출되면 좌측 하단의 [무시하고 설치하기]를 찾아 클릭합니다.",
+    desc: "기기 자체 보안에서 안전하지 않은 앱 경고가 발생할 경우, 왼쪽 하단의 [무시하고 설치]를 선택합니다.",
     imgUrl: "/images/step3.jpg"
   },
   {
     step: "04",
     title: "안전 경고 우회 (1차)",
-    desc: "기기 자체 보안에서 안전하지 않은 앱 경고가 발생할 경우, 왼쪽 하단의 [무시하고 설치]를 선택합니다.",
+    desc: "Play 프로텍트 차단 경고가 활성화되면 하단의 [세부정보 더보기] 텍스트를 클릭합니다.",
     imgUrl: "/images/step4.jpg"
   },
   {
     step: "05",
     title: "안전 경고 우회 (2차)",
-    desc: "인증되지 않은 출처 추가 안내 팝업이 발생하더라도 동일하게 하단의 [무시하고 설치] 버튼을 선택합니다.",
+    desc: "[무시하고 설치]를 클릭합니다.",
     imgUrl: "/images/step5.jpg"
   },
   {
@@ -69,7 +69,7 @@ export const INSTALL_STEPS = [
 
 export default function App() {
   const handleDownloadTrigger = () => {
-    alert(`${DOWNLOAD_CONFIG.appName} 현장 조사 패키지(${DOWNLOAD_CONFIG.version}) 다운로드를 개시합니다.\n네트워크 환경에 따라 최대 수십 초가 소요될 수 있습니다.`);
+    alert(`${DOWNLOAD_CONFIG.appName} 현장 조사 어플(${DOWNLOAD_CONFIG.version}) 다운로드를 시작합니다.`);
     window.location.href = DOWNLOAD_CONFIG.downloadUrl;
   };
 
@@ -104,7 +104,6 @@ export default function App() {
             <h2 className="text-2xl md:text-3xl font-black text-darkgreen">설치 및 가동 안내 가이드</h2>
             <p className="text-sm text-slate-500">인증되지 않은 앱 경고가 발생할 경우 아래 순서대로 설치를 진행해 주십시오.</p>
             <div className="flex items-center justify-center gap-1.5 text-xs text-primary font-bold md:hidden pt-2 animate-pulse select-none">
-              <span>◀ 좌우로 밀어서 순서대로 확인하세요 ▶</span>
             </div>
           </div>
 
