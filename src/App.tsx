@@ -20,7 +20,7 @@ export const DOWNLOAD_CONFIG = {
   appSubtitle: "모바일 현장 조사 어플리케이션",
   
   // public/images/ 폴더 내부의 APK 파일 상대 경로 바인딩
-  downloadUrl: "/ForestShield_v4.6.1.apk", 
+  downloadUrl: "/app-release.apk", 
   
   version: "v4.6.1",
   updateDate: "2026-07-06",
