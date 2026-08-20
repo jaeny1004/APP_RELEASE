@@ -16,16 +16,16 @@ import {
 // 🛠️ [다운로드 링크 및 프로그램 설명 텍스트 설정]
 // =========================================================================
 export const DOWNLOAD_CONFIG = {
-  appName: "포레스트실드 AI",
+  appName: "IMPINE",
   appSubtitle: "모바일 현장 조사 어플리케이션",
   
   // public/images/ 폴더 내부의 APK 파일 상대 경로 바인딩
   downloadUrl: "/app-release.apk", 
   
-  version: "v4.6.1",
-  updateDate: "2026-07-06",
-  fileSize: "42.8 MB",
-  compatibility: "Android 9.0 이상 지원 (iOS 버전 개발 중)",
+  version: "v1.0.1",
+  updateDate: "2026-08-20",
+  fileSize: "77.8 MB",
+  compatibility: "Android 9.0 이상 지원",
   
   slogan: "시민 참여형 간편 의심목 신고 기믹부터 현장 요원의 정밀 GPS 격자 마킹, STT 음성 작업 일지 전송 및 약제 정품 QR코드 인증까지 연계 처리하는 원스톱 모바일 앱입니다."
 };
@@ -206,16 +206,22 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-white border-t border-b border-[#dfebd4] py-16 px-6 w-full">
+      <section className="bg-white border-t border-b border-[#dfebd4] py-16 px-6 w-full overflow-hidden">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-2">
             <h2 className="text-2xl md:text-3xl font-black text-darkgreen">설치 및 가동 안내 가이드</h2>
             <p className="text-sm text-slate-500">인증되지 않은 앱 경고가 발생할 경우 아래 순서대로 예외 설치를 진행해 주십시오.</p>
+            <div className="flex items-center justify-center gap-1.5 text-xs text-primary font-bold md:hidden pt-2 animate-pulse select-none">
+              <span>◀ 좌우로 밀어서 순서대로 확인하세요 ▶</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible">
             {INSTALL_STEPS.map((stepItem, index) => (
-              <div key={index} className="bg-[#f8faf7] border border-[#dfebd4] rounded-3xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div 
+                key={index} 
+                className="w-[280px] shrink-0 snap-center bg-[#f8faf7] border border-[#dfebd4] rounded-3xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200 md:w-auto md:shrink-0"
+              >
                 <div className="space-y-4">
                   <div 
                     className="w-full h-80 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200/80 flex items-center justify-center relative bg-no-repeat bg-center" 
@@ -243,7 +249,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto space-y-6">
           <div className="flex items-center justify-center gap-2 text-primary font-black">
             <ShieldCheck size={20}/>
-            <span>포레스트실드 AI 통합 관제망</span>
+            <span>{DOWNLOAD_CONFIG.appName} 통합 관제망</span>
           </div>
           <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
             본 소프트웨어는 산림청 및 소나무재선충 예방 안전 방제 단체의 지상 기동 관제 규격을 수용하여 작동하는 공식 모바일 현장 조사 어플리케이션입니다. 무단 배포를 금합니다.
