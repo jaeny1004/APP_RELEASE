@@ -12,7 +12,7 @@ import {
 // =========================================================================
 export const DOWNLOAD_CONFIG = {
   appName: "IMPINE",
-  appSubtitle: "모바일 현장 조사 어플리케이션",
+  appSubtitle: "현장 조사 어플리케이션",
   
   // public/images/ 폴더 내부의 APK 파일 상대 경로 바인딩
   downloadUrl: "/app-release.apk", 
@@ -86,10 +86,7 @@ export default function App() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-primary px-3 py-1 rounded-full text-xs font-bold border border-emerald-500/30">
-            <Smartphone size={14}/>
-            <span>모바일 지상 예찰 전용 앱</span>
-          </div>
+          
           
           <h1 className="text-3xl md:text-5xl font-black leading-tight tracking-tight">
             {DOWNLOAD_CONFIG.appName} <br />
@@ -99,11 +96,6 @@ export default function App() {
           <p className="text-sm md:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
             {DOWNLOAD_CONFIG.slogan}
           </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
-            <div className="flex items-center gap-1"><CalendarDays size={14}/> <span>최근 업데이트: {DOWNLOAD_CONFIG.updateDate}</span></div>
-            <div className="flex items-center gap-1"><HardDrive size={14}/> <span>파일 용량: {DOWNLOAD_CONFIG.fileSize}</span></div>
-          </div>
         </div>
       </header>
 
@@ -112,7 +104,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-2">
             <h2 className="text-2xl md:text-3xl font-black text-darkgreen">설치 및 가동 안내 가이드</h2>
-            <p className="text-sm text-slate-500">인증되지 않은 앱 경고가 발생할 경우 아래 순서대로 예외 설치를 진행해 주십시오.</p>
+            <p className="text-sm text-slate-500">인증되지 않은 앱 경고가 발생할 경우 아래 순서대로 설치를 진행해 주십시오.</p>
             <div className="flex items-center justify-center gap-1.5 text-xs text-primary font-bold md:hidden pt-2 animate-pulse select-none">
               <span>◀ 좌우로 밀어서 순서대로 확인하세요 ▶</span>
             </div>
@@ -153,7 +145,7 @@ export default function App() {
             안내 가이드를 모두 확인하셨나요?
           </h3>
           <p className="text-xs md:text-sm text-slate-500 leading-relaxed max-w-md mx-auto">
-            출처를 알 수 없는 앱 차단 및 Play 프로텍트 경고창은 안드로이드 마켓 수동 설치(APK) 시 수반되는 정상적인 과정입니다. 아래 버튼을 눌러 안전 설치를 진행해 주십시오.
+            아래 버튼을 눌러 설치를 진행해 주십시오.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 pt-2">
             <button 
@@ -171,22 +163,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
-
-      <footer className="bg-slate-900 text-slate-400 py-12 px-6 w-full text-center">
-        <div className="max-w-5xl mx-auto space-y-6">
-          <div className="flex items-center justify-center gap-2 text-primary font-black">
-            <ShieldCheck size={20}/>
-            <span>{DOWNLOAD_CONFIG.appName} 통합 관제망</span>
-          </div>
-          <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
-            본 소프트웨어는 산림청 및 소나무재선충 예방 안전 방제 단체의 지상 기동 관제 규격을 수용하여 작동하는 공식 모바일 현장 조사 어플리케이션입니다. 무단 배포를 금합니다.
-          </p>
-          <div className="text-[10px] text-slate-600">
-            © 2026 ForestShield AI. All rights reserved.
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
