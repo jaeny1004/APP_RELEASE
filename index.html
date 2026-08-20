@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포레스트실드 AI 모바일 현장 조사 앱 다운로드 센터</title>
+    <!-- Vercel 및 로컬 로드 실패를 우회하기 위해 실시간 Tailwind CDN 임베딩 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // 커스텀 테마 컬러 스펙 하드코딩 주입
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#26d97b',
+                dark: '#1ebd68',
+              },
+              darkgreen: {
+                DEFAULT: '#0a542e',
+                dark: '#073a20',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#f4f8f5] text-[#192a20]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
