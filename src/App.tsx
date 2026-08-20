@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // =========================================================================
-// 🛠 [다운로드 링크 및 프로그램 설명 텍스트 설정]
+// 🛠️ [다운로드 링크 및 프로그램 설명 텍스트 설정]
 // =========================================================================
 export const DOWNLOAD_CONFIG = {
   appName: "IMPINE",
@@ -26,7 +26,7 @@ export const DOWNLOAD_CONFIG = {
 };
 
 // =========================================================================
-// 🛠 [첨부 사진 순서 매핑 설치 및 우회 작동 가이드 설정]
+// 🛠️ [첨부 사진 순서 매핑 설치 및 우회 작동 가이드 설정]
 // =========================================================================
 export const INSTALL_STEPS = [
   {
@@ -76,6 +76,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col justify-between">
       
+
       <header className="bg-gradient-to-br from-[#0a542e] to-[#04331e] text-white py-16 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -103,22 +104,11 @@ export default function App() {
             <div className="flex items-center gap-1"><CalendarDays size={14}/> <span>최근 업데이트: {DOWNLOAD_CONFIG.updateDate}</span></div>
             <div className="flex items-center gap-1"><HardDrive size={14}/> <span>파일 용량: {DOWNLOAD_CONFIG.fileSize}</span></div>
           </div>
-
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button 
-              onClick={handleDownloadTrigger}
-              className="w-full sm:w-auto bg-primary hover:bg-[#1ebd68] text-darkgreen font-black px-8 py-4 rounded-2xl flex items-center justify-center gap-3 transition-colors duration-200 shadow-lg shadow-emerald-950/20"
-            >
-              <Download size={20}/>
-              <span>안드로이드용 APK 다운로드</span>
-            </button>
-            <span className="text-xs text-slate-400 text-center sm:text-left">{DOWNLOAD_CONFIG.compatibility}</span>
-          </div>
         </div>
       </header>
 
 
-      <section className="bg-white border-t border-b border-[#dfebd4] py-16 px-6 w-full overflow-hidden">
+      <section className="bg-white border-t border-[#dfebd4] py-16 px-6 w-full overflow-hidden">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-2">
             <h2 className="text-2xl md:text-3xl font-black text-darkgreen">설치 및 가동 안내 가이드</h2>
@@ -157,8 +147,33 @@ export default function App() {
         </div>
       </section>
 
-     
-      <footer className="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800 w-full text-center">
+      <section className="bg-[#f4f8f5] py-16 px-6 w-full text-center border-t border-b border-[#dfebd4]">
+        <div className="max-w-xl mx-auto space-y-6">
+          <h3 className="text-xl md:text-2xl font-black text-darkgreen">
+            안내 가이드를 모두 확인하셨나요?
+          </h3>
+          <p className="text-xs md:text-sm text-slate-500 leading-relaxed max-w-md mx-auto">
+            출처를 알 수 없는 앱 차단 및 Play 프로텍트 경고창은 안드로이드 마켓 수동 설치(APK) 시 수반되는 정상적인 과정입니다. 아래 버튼을 눌러 안전 설치를 진행해 주십시오.
+          </p>
+          <div className="flex flex-col items-center justify-center gap-4 pt-2">
+            <button 
+              onClick={handleDownloadTrigger}
+              className="w-full sm:w-auto bg-primary hover:bg-[#1ebd68] text-darkgreen font-black px-10 py-4 rounded-2xl flex items-center justify-center gap-3 transition-colors duration-200 shadow-lg shadow-emerald-950/20 text-base"
+            >
+              <Download size={22}/>
+              <span>안드로이드용 APK 다운로드</span>
+            </button>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400">
+              <span>파일 크기: {DOWNLOAD_CONFIG.fileSize}</span>
+              <span>•</span>
+              <span>{DOWNLOAD_CONFIG.compatibility}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <footer className="bg-slate-900 text-slate-400 py-12 px-6 w-full text-center">
         <div className="max-w-5xl mx-auto space-y-6">
           <div className="flex items-center justify-center gap-2 text-primary font-black">
             <ShieldCheck size={20}/>
