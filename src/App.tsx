@@ -77,7 +77,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col justify-between">
       
 
-      <header className="bg-gradient-to-br from-[#0a542e] to-[#04331e] text-white py-16 px-6 relative overflow-hidden">
+      <header className="bg-gradient-to-br from-[#0a542e] to-[#04331e] text-white py-10 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <line x1="0" y1="100" x2="1000" y2="500" stroke="white" strokeWidth="2"/>
@@ -85,9 +85,7 @@ export default function App() {
           </svg>
         </div>
 
-        <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
-          
-          
+        <div className="max-w-3xl mx-auto text-center space-y-4 relative z-10">
           <h1 className="text-3xl md:text-5xl font-black leading-tight tracking-tight">
             {DOWNLOAD_CONFIG.appName} <br />
             <span className="text-primary">{DOWNLOAD_CONFIG.appSubtitle}</span>
@@ -100,8 +98,8 @@ export default function App() {
       </header>
 
 
-      <section className="bg-white border-t border-[#dfebd4] py-16 px-6 w-full overflow-hidden">
-        <div className="max-w-5xl mx-auto space-y-12">
+      <section className="bg-white border-t border-[#dfebd4] py-10 px-6 w-full overflow-hidden">
+        <div className="max-w-5xl mx-auto space-y-6">
           <div className="text-center space-y-2">
             <h2 className="text-2xl md:text-3xl font-black text-darkgreen">설치 및 가동 안내 가이드</h2>
             <p className="text-sm text-slate-500">인증되지 않은 앱 경고가 발생할 경우 아래 순서대로 설치를 진행해 주십시오.</p>
@@ -116,9 +114,9 @@ export default function App() {
                 key={index} 
                 className="w-[280px] shrink-0 snap-center bg-[#f8faf7] border border-[#dfebd4] rounded-3xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200 md:w-auto md:shrink-0"
               >
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div 
-                    className="w-full h-80 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200/80 flex items-center justify-center relative bg-no-repeat bg-center" 
+                    className="w-full h-64 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200/80 flex items-center justify-center relative bg-no-repeat bg-center" 
                     style={{ 
                       backgroundImage: `url(${stepItem.imgUrl})`,
                       backgroundSize: 'contain',
@@ -127,7 +125,7 @@ export default function App() {
                   >
                     <div className="absolute inset-0 bg-black/[0.02]"></div>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     <div className="text-3xl font-black text-emerald-300">{stepItem.step}</div>
                     <h4 className="text-sm font-black text-darkgreen">{stepItem.title}</h4>
                     <p className="text-xs text-slate-500 leading-relaxed">{stepItem.desc}</p>
@@ -139,15 +137,16 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-[#f4f8f5] py-16 px-6 w-full text-center border-t border-b border-[#dfebd4]">
-        <div className="max-w-xl mx-auto space-y-6">
+
+      <section className="bg-[#f4f8f5] py-10 px-6 w-full text-center border-t border-b border-[#dfebd4]">
+        <div className="max-w-xl mx-auto space-y-4">
           <h3 className="text-xl md:text-2xl font-black text-darkgreen">
             안내 가이드를 모두 확인하셨나요?
           </h3>
           <p className="text-xs md:text-sm text-slate-500 leading-relaxed max-w-md mx-auto">
             아래 버튼을 눌러 설치를 진행해 주십시오.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col items-center justify-center gap-3 pt-1">
             <button 
               onClick={handleDownloadTrigger}
               className="w-full sm:w-auto bg-primary hover:bg-[#1ebd68] text-darkgreen font-black px-10 py-4 rounded-2xl flex items-center justify-center gap-3 transition-colors duration-200 shadow-lg shadow-emerald-950/20 text-base"
